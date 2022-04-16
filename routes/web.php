@@ -14,14 +14,14 @@ use App\Http\Controllers\QrCodeController as QrCode;
 |
 */
 
-Route::get('/qrcode', function () {
-    $q = QrCode::wiFi([
-        'ssid' => 'Scan Me QrCode',
-        'encryption' => 'WPA2',
-        'password' => '!pass1234',
-        'hidden' => 'true'
-    ]);
-    return view('qrcode', compact('q'));
-});
+// Route::get('/qrcode', function () {
+//     $q = QrCode::wiFi([
+//         'ssid' => 'Scan Me QrCode',
+//         'encryption' => 'WPA2',
+//         'password' => '!pass1234',
+//         'hidden' => 'true'
+//     ]);
+//     return view('qrcode', compact('q'));
+// });
 
-Route::get('/qrcode', 'QrCodeController@qr');
+Route::get('/', 'QrCodeController@qr');
